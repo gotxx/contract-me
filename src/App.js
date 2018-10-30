@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import Calendar from "./components/Calendar";
+import Main from "./components/Main";
 import './App.css';
 
 class App extends Component {
     render() {
         return (
             <div className="App">
-                <Calendar />
+                <Main />
             </div>
         );
   }

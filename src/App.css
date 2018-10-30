@@ -143,7 +143,10 @@ body {
   background: var(--neutral-color);
   transition: 0.25s ease-out;
 }
-
+.calendar .body a.cell {
+  color: var(--text-color);
+}
+.calendar .body a.cell,
 .calendar .body .cell:hover {
   background: var(--bg-color);
   transition: 0.5s ease-out;
@@ -176,6 +179,7 @@ body {
   font-weight: 700;
 }
 
+.calendar .body a.cell.disabled,
 .calendar .body .disabled {
   color: var(--text-color-light);
   pointer-events: none;

@@ -1,5 +1,6 @@
 import React from 'react';
 import Swipe from 'react-easy-swipe';
+import { Link } from 'react-router-dom';
 import dateFns from 'date-fns';
 import pl from 'date-fns/locale/pl';
 
@@ -61,18 +62,22 @@ class Calendar extends React.Component {
         const startDate = dateFns.startOfWeek(monthStart);
         const endDate = dateFns.endOfWeek(monthEnd);
         const dateFormat = "D";
+        const idFormat = "YYYYMMDD";
         const rows = [];
 
         let days = [];
         let day = startDate;
         let formattedDate = "";
+        let dateId = "";
 
         while(day <= endDate) {
             for (let i=0; i<7; i++){
                 formattedDate = dateFns.format(day, dateFormat);
+                dateId = dateFns.format(day, idFormat);
                 const cloneDay = day;
                 days.push(
-                    <div
+                    <Link
+                        to={`/agenda/${dateId}`}
                         className={`col cell ${
                             !dateFns.isSameMonth(day, monthStart)
                             ? "disabled"
@@ -83,7 +88,7 @@ class Calendar extends React.Component {
                     >
                         <span className="number">{formattedDate}</span>
                         <span className="bg">{formattedDate}</span>
-                    </div>
+                    </Link>
                 );
                 day = dateFns.addDays(day, 1);
             }
