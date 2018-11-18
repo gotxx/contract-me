@@ -62,7 +62,7 @@ class Calendar extends React.Component {
         const startDate = dateFns.startOfWeek(monthStart);
         const endDate = dateFns.endOfWeek(monthEnd);
         const dateFormat = "D";
-        const idFormat = "YYYYMMDD";
+        const idFormat = "YYYY-MM-DD";
         const rows = [];
 
         let days = [];
